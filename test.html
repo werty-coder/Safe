@@ -90,8 +90,6 @@ nav ul li a.active {
         }
             
 
-
-
  
 pre  {  
 font-family: "comic sans ms";
@@ -284,7 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const shareBtn = document.getElementById('share-chill');
     
     // Массив из 100 изображений (замени на свои пути)
-    const images = Array.from({length: 100}, (_, i) => `imgs/sloth-${i+1}.jpg`);
+    const images = Array.from({length: 10}, (_, i) => `imgs/sloth-${i+1}.jpg`);
     
     sloth.addEventListener('click', () => {
         const randomIndex = Math.floor(Math.random() * images.length);
@@ -302,7 +300,14 @@ document.addEventListener('DOMContentLoaded', () => {
     
     shareBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const tweetText = encodeURIComponent(`Let's chill with SLOTH! CA: FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8 Pump.fun: https://pump.fun/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg #SLOTHcoin 🦥`);
+        const tweetText = encodeURIComponent(
+`Let's chill with SLOTH🦥! 
+        
+CA: FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8 
+        
+Pump.fun💊: https://pump.fun/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg 
+
+#SLOTHcoin `);
         window.open(`https://twitter.com/intent/tweet?text=${tweetText}`, '_blank');
     });
 });
