@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="author" content="Supply">
+    <meta name="description" content="The chillest solana project">
+    <meta name="keywords" content="solana, sloth, coin, chill">
+    <meta http-equiv="refresh" content="120">
+    <link rel="preconnect" href="https://www.geckoterminal.com">
+<link rel="preconnect" href="https://plugin.jup.ag">
+<link rel="preload" href="https://plugin.jup.ag/plugin-v1.js" as="script">
+<link rel="preload" href="https://www.geckoterminal.com/solana/pools/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg?embed=1&info=0&swaps=0&light_chart=0&chart_type=market_cap&resolution=1s&bg_color=111827" as="document">
+<meta http-equiv="Cache-Control" content="max-age=3600">
+<title>SLOTH</title>
+<link rel="icon" href="chill.jpeg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+
+.navbar {
+    display: flex; /* Горизонтальное расположение */
+    justify-content: space-between; /* Логотип слева, меню справа */
+    align-items: center; /* Выравнивание по центру */
+    background-color: rgb(0, 0, 0); /* Чёрный фон */
+    padding: 1rem 2rem; /* Отступы */
+    color: white; /* Белый текст */
+}
+
+.logo a {
+    font-size: 1.5em; /* Размер логотипа */
+    text-decoration: none; /* Без подчёркивания */
+    color: #a855f7; /* Фиолетовый цвет, как на фото */
+}
+
+nav ul {
+    display: flex; /* Горизонтальный список */
+    list-style: none; /* Без точек */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 2em; /* Расстояние между пунктами */
+}
+
+nav ul li a {
+    text-decoration: none; /* Без подчёркивания */
+    color: gray; /* Серый цвет, как на фото */
+    font-size: 1em;
+}
+
+nav ul li a:hover {
+    color: white; /* Подсветка при наведении */
+}
+nav ul li a.active {
+    color: rgb(11, 203, 14); /* Или другой цвет для выделения */
+    font-weight: bold;
+}
+
+
+
+ .ticker-wrap {
+            width: 100vw;
+            overflow: hidden;
+            padding: 0.1vw 0;
+        }
+        .ticker {
+            display: inline-block;
+            white-space: nowrap;
+            padding-right: 100vw; /* Для плавного перехода */
+            animation: ticker 120s linear infinite; /* Анимация прокрутки */
+           
+        }
+        .ticker:hover {
+            animation-play-state: paused; /* Остановка анимации при наведении */
+        }
+        .ticker div {
+            display: inline-block;
+            color: rgb(255, 255, 255); /* Цвет текста */
+            font-size: 4vw; /* Размер шрифта */
+            padding: 0 0.1vw;
+        }
+        @keyframes ticker {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+ body { padding: 0; margin:0; 
+        font-family: "Comic Sans MS";
+        }
+            
+
+
+
+ 
+pre  {  
+font-family: "comic sans ms";
+font-size: 2.85vw;
+text-shadow: 0.23vw 0.23vw #000;
+text-align: right;
+ }
+
+  #hello { 
+    background-image: url('hello1.jpeg'); 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100vw; 
+    padding: 0; margin: 0;
+    color: #eaeaea;
+  }
+
+
+  #gidro { 
+    background-image: url('gidro.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100vw; 
+    padding: 0; margin: 0;
+    color: #2492ec;
+  }
+
+    #track { 
+    background-image: url('track.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100vw; 
+    padding: 0; margin: 0;
+    color: brown;
+  }
+
+     #lambo { 
+    background-image: url('W.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-size: 100vw; 
+    padding: 0; margin: 0;
+    color: brown;
+  }
+
+
+html, body {
+    height: 100%; /* Обязательно, чтобы избежать коллапса высоты */
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    background-color: #00cc99; /* Фоллбек на зелёный, если img не загрузится */
+    background-image: url('ylii.jpg'); /* Твой путь к изображению */
+    background-repeat: no-repeat;
+    background-attachment: scroll; /* Фиксирует фон при скролле для parallax-вайба */
+    background-size: cover; /* Покрывает весь блок, без искажений */
+    background-position: center; /* Центрирует изображение */
+    height: 100vh; /* Полная высота экрана – вот ключ! */
+    min-height: 180vh; /* Минимум, если контент больше */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Для позиционирования дочерних элементов */
+}
+
+.hero h1 {
+    font-size: 6vw;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.hero h2 {
+    font-size: 4vw;
+    color: #fff;
+    margin: 0.5em 0;
+}
+
+.hero img {
+    width: 20vw;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hero img:hover {
+    transform: scale(1.1); /* Лёгкий hover без кликера */
+}
+
+/* Modal для рандомного изображения */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#random-img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 1em;
+}
+
+.close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+}
+
+.close:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.share-btn {
+    background: #a855f7;
+    color: #fff;
+    padding: 0.5em 1em;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 1em;
+    font-size: 1.5vw;
+    transition: background 0.3s;
+}
+
+.share-btn:hover {
+    background: #35a907;
+}
+
+</style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">
+      <h1 style="font-size: 1.5vw; ;">FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8</h1>
+        </div>
+        <nav>
+            <ul>
+                <li style="font-size: 2vw;"><a href="sloth.html" target="_self">What's up</a></li>
+                <li style="font-size: 2vw;"><a href="chart.html" target="_self">Chart</a></li> 
+                <li style="font-size: 2vw;"><a href="swap.html" target="_self">Swap</a></li> 
+                <li style="font-size: 2vw;"><a href="https://youtu.be/_ydWBprHKi4?si=AB-z_y49npM7rXtI" target="_blank">Twitter</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+
+    <div class="ticker-wrap" style="background-color: RGB(0, 204, 153);">
+        <div class="ticker">
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+        <div> <img src="solana.png" alt="sol_logo" style="height: 2em; vertical-align: middle;">SLOTH   <img src="aura-emodji.png" alt="aura-emodji" style="height: 2em; vertical-align: middle;">SLOTH</div>
+
+
+  
+        </div>
+    </div>
+ 
+
+<img src="hello1.jpeg" alt="hello" style="width:100vw; height:auto; display:block; margin:0; padding:0;">
+<div class="ticker-wrap" style="background-color: #FFDF00; ">
+        <div class="ticker">
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+        <div> <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH   <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  <img src="cute-emodji.png" alt="cute-emodji" style="height: 2em; vertical-align: middle;">SLOTH  </div>
+
+
+           </div> 
+    </div>
+    <!--ТУТ ДЕЛАЕМ -->
+<div class="hero">
+    <h1>Let's chill</h1>
+    <h2>Sloth</h2>
+    <img src="your-sloth-head.png" alt="Chill Sloth" id="sloth-head"> <!-- Твой основной img слота -->
+</div>
+
+<!-- Modal для показа рандомного изображения -->
+<div id="chill-modal" class="modal">
+    <span class="close">&times;</span>
+    <div class="modal-content">
+        <img id="random-img" src="" alt="Random SLOTH Meme">
+        <a href="#" class="share-btn" id="share-chill">Share to Twitter!</a>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const sloth = document.getElementById('sloth-head');
+    const modal = document.getElementById('chill-modal');
+    const closeBtn = document.querySelector('.close');
+    const randomImg = document.getElementById('random-img');
+    const shareBtn = document.getElementById('share-chill');
+    
+    // Массив из 100 изображений (замени на свои пути)
+    const images = Array.from({length: 100}, (_, i) => `imgs/sloth-${i+1}.jpg`);
+    
+    sloth.addEventListener('click', () => {
+        const randomIndex = Math.floor(Math.random() * images.length);
+        randomImg.src = images[randomIndex];
+        modal.style.display = 'flex';
+    });
+    
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+    
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) modal.style.display = 'none';
+    });
+    
+    shareBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const tweetText = encodeURIComponent(`Let's chill with SLOTH! CA: FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8 Pump.fun: https://pump.fun/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg #SLOTHcoin 🦥`);
+        window.open(`https://twitter.com/intent/tweet?text=${tweetText}`, '_blank');
+    });
+});
+
+</script>
+</body>
+</html>
