@@ -90,6 +90,8 @@ nav ul li a.active {
         }
             
 
+
+
  
 pre  {  
 font-family: "comic sans ms";
@@ -120,7 +122,8 @@ html, body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative; /* Для позиционирования дочерних элементов */
+    position: relative; /* Для позиционирования дочерних элементов */ 
+    overflow: hidden; /* Если контент выходит */
 }
 
 .hero h1 {
@@ -208,6 +211,59 @@ html, body {
     background: #35a907;
 }
 
+/* Новый стиль для оформления как Twitter post */
+.twitter-post {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 1em;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.twitter-post .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.twitter-post .header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.twitter-post .header .username {
+    font-weight: bold;
+    color: #000;
+}
+
+.twitter-post .header .handle {
+    color: #888;
+    margin-left: 0.5em;
+}
+
+.twitter-post p {
+    margin: 0 0 1em;
+    color: #000;
+}
+
+.twitter-post .post-img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1em;
+}
+
+.twitter-post .actions {
+    display: flex;
+    justify-content: space-between;
+    color: #888;
+    font-size: 0.8em;
+}
+
 </style>
 </head>
 <body>
@@ -268,8 +324,22 @@ html, body {
 <div id="chill-modal" class="modal">
     <span class="close">&times;</span>
     <div class="modal-content">
-        <img id="random-img" src="" alt="Random SLOTH Meme">
+        <div class="twitter-post" id="twitter-post"> <!-- Контейнер для оформления как Twitter post -->
+            <div class="header">
+                <img src="sloth-avatar.jpg" alt="SLOTH Avatar"> <!-- Аватар аккаунта, замени на свой -->
+                <span class="username">SLOTH Coin</span>
+                <span class="handle">@SLOTHcoin</span>
+            </div>
+            <p>Let's chill with SLOTH! 🦥</p>
+            <img id="random-img" class="post-img" src="" alt="Random SLOTH Meme">
+            <div class="actions">
+                <span>❤️ 420</span>
+                <span>🔁 69</span>
+                <span>💬 1337</span>
+            </div>
+        </div>
         <a href="#" class="share-btn" id="share-chill">Share to Twitter!</a>
+        <a href="javascript:void(0);" class="share-btn" id="copy-meme">Copy Meme</a> <!-- Кнопка для копирования -->
     </div>
 </div>
 
@@ -280,6 +350,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close');
     const randomImg = document.getElementById('random-img');
     const shareBtn = document.getElementById('share-chill');
+    const copyBtn = document.getElementById('copy-meme');
     
     // Массив из 100 изображений (замени на свои пути)
     const images = Array.from({length: 10}, (_, i) => `imgs/sloth-${i+1}.jpg`);
@@ -300,17 +371,52 @@ document.addEventListener('DOMContentLoaded', () => {
     
     shareBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        const tweetText = encodeURIComponent(
-`Let's chill with SLOTH🦥! 
-        
-CA: FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8 
-        
-Pump.fun💊: https://pump.fun/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg 
-
-#SLOTHcoin `);
+        const tweetText = encodeURIComponent(`Let's chill with SLOTH! CA: FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8 Pump.fun: https://pump.fun/71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg #SLOTHcoin 🦥`);
         window.open(`https://twitter.com/intent/tweet?text=${tweetText}`, '_blank');
     });
+    
+copyBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    const img = randomImg; // твой <img>
+
+    // Ждём полной загрузки изображения (на всякий случай)
+    if (!img.complete || img.naturalWidth === 0) {
+        alert('Изображение ещё не загрузилось. Подожди секунду и попробуй снова.');
+        return;
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth;
+    canvas.height = img.naturalHeight;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+
+    canvas.toBlob((blob) => {
+        if (!blob) {
+            alert('Не удалось создать blob из изображения.');
+            return;
+        }
+
+        const item = new ClipboardItem({ 'image/png': blob });
+
+        navigator.clipboard.write([item])
+            .then(() => {
+                alert('Meme успешно скопирован в буфер! Теперь вставь в Twitter (Ctrl+V).');
+            })
+            .catch((err) => {
+                console.error('Ошибка копирования:', err);
+                alert('Не удалось скопировать. Открой консоль (F12) и посмотри ошибку.');
+            });
+    }, 'image/png');
 });
+});
+
+// Короче: сейчас всё работает и будет работать всегда на локалхосте.
+// Когда будешь публиковать — просто убедись, что сайт на HTTPS, и всё останется идеально. 
+
+
+
 
 </script>
 </body>
