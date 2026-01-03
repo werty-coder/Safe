@@ -434,7 +434,7 @@ copyBtn.addEventListener('click', (e) => {
 
     // Ждём полной загрузки изображения (на всякий случай)
     if (!img.complete || img.naturalWidth === 0) {
-        alert('Изображение ещё не загрузилось. Подожди секунду и попробуй снова.');
+        alert('The image has not loaded yet. Please wait a second and try again.');
         return;
     }
 
@@ -446,7 +446,7 @@ copyBtn.addEventListener('click', (e) => {
 
     canvas.toBlob((blob) => {
         if (!blob) {
-            alert('Не удалось создать blob из изображения.');
+            alert('Failed to create blob from image.');
             return;
         }
 
@@ -454,11 +454,11 @@ copyBtn.addEventListener('click', (e) => {
 
         navigator.clipboard.write([item])
             .then(() => {
-                alert('Meme успешно скопирован в буфер! Теперь вставь в Twitter (Ctrl+V).');
+                alert('Meme copied to clipboard! Paste in Twitter.');
             })
             .catch((err) => {
-                console.error('Ошибка копирования:', err);
-                alert('Не удалось скопировать. Открой консоль (F12) и посмотри ошибку.');
+                console.error('Clipboard copy failed', err);
+                alert('Clipboard copy failed: ' + err.message);
             });
     }, 'image/png');
 });
