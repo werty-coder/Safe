@@ -130,7 +130,7 @@ nav ul li a.active {
 <body>
     <header class="navbar">
         <div class="logo">
-      <h1 style="font-size: 1.5vw; ;">FDcjznQLP6KLCgrEPF35PNpFMebmGLDhPji8TCmVdkK8</h1> <!-- TODO change  ca -->
+      <h1 style="font-size: 1.5vw; ;">71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg</h1> <!-- TODO change  ca -->
         </div>
         <nav>
             <ul>
@@ -169,34 +169,7 @@ nav ul li a.active {
         </div>
     </div>
  
-<script>
-    const tokenAddress = '71Jvq4Epe2FCJ7JFSF7jLXdNk1Wy4Bhqd9iL6bEFELvg'; // TODO test (Gor) CA chahnge to main later
 
-    function formatNumber(num) {
-        if (num >= 1e6) return `$${Math.round(num / 1e6)}M`;
-        if (num >= 1e3) return `$${Math.round(num / 1e3)}K`;
-        return `$${Math.round(num)}`;
-    }
-
-    function updatePrice() {
-        fetch(`https://api.dexscreener.com/token-pairs/v1/solana/${tokenAddress}`)
-            .then(response => response.json())
-            .then(data => {
-                if (data && data.length > 0) {
-                    const sorted = data.sort((a, b) => (b.liquidity?.usd || 0) - (a.liquidity?.usd || 0));
-                    const pair = sorted[0];
-                    const price = pair.priceUsd ? `$${pair.priceUsd}` : 'N/A';
-                    const mc = pair.fdv ? formatNumber(pair.fdv) : 'N/A';
-                    document.getElementById('price-info').innerHTML = `Price: ${price} | Market Cap: ${mc}`;
-                } else {
-                    document.getElementById('price-info').innerHTML = 'No dexscreener yet';
-                }
-            })
-            .catch(() => document.getElementById('price-info').innerHTML = 'Error fetching data');
-    }
-    updatePrice();
-    setInterval(updatePrice, 30000); 
-</script>
 
 
 <div class="container">
